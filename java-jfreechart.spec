@@ -5,15 +5,15 @@
 %bcond_without	javadoc		# don't build javadoc
 #
 Summary:	Charts Generation library
+Summary(pl.UTF-8):	Biblioteka do generowania wykresów
 Name:		jfreechart
 Version:	1.0.7
 Release:	0.1
-Epoch:		0
 License:	LGPL
-URL:		http://www.jfree.org/jfreechart/
+Group:		Development/Languages/Java
 Source0:	http://dl.sourceforge.net/jfreechart/%{name}-%{version}.tar.gz
 # Source0-md5:	4967a55ef939ae60a18cd865e846f4cc
-Group:		Development/Languages/Java
+URL:		http://www.jfree.org/jfreechart/
 BuildRequires:	ant
 BuildRequires:	jcommon >= 1.0.12
 BuildRequires:	jpackage-utils >= 0:1.5
@@ -28,26 +28,37 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Free Java class library for generating charts.
 
+%description -l pl.UTF-8
+Wolnodostępna biblioteka klas Javy do generowania wykresów.
+
 %package demo
 Summary:	Demo for %{name}
+Summary(pl.UTF-8):	Przykład użycia biblioteki %{name}
 Group:		Development/Languages/Java
 Requires:	%{name} = %{version}-%{release}
 Requires:	jcommon
 Requires:	servlet
 
 %description demo
-Demos for %{name}.
+Demo for %{name}.
+
+%description demo -l pl.UTF-8
+Przykład użycia biblioteki %{name}.
 
 %package javadoc
 Summary:	Javadoc for %{name}
+Summary(pl.UTF-8):	Dokumentacja Javadoc do biblioteki %{name}
 Group:		Documentation
 Requires:	jpackage-utils
 
 %description javadoc
 Javadoc for %{name}.
 
-%description javadoc -l fr
+%description javadoc -l fr.UTF-8
 Javadoc pour %{name}.
+
+%description javadoc -l pl.UTF-8
+Dokumentacja Javadoc do biblioteki %{name}.
 
 %prep
 %setup -q
