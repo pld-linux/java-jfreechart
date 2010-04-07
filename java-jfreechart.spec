@@ -19,7 +19,7 @@ Name:		java-jfreechart
 Version:	1.0.7
 Release:	0.1
 License:	LGPL
-Group:		Development/Languages/Java
+Group:		Libraries/Java
 Source0:	http://downloads.sourceforge.net/jfreechart/%{srcname}-%{version}.tar.gz
 # Source0-md5:	4967a55ef939ae60a18cd865e846f4cc
 URL:		http://www.jfree.org/jfreechart/
@@ -35,6 +35,7 @@ BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	java-jcommon
+Requires:	java-xml-commons
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
