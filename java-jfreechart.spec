@@ -5,12 +5,6 @@
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
 
-%if "%{pld_release}" == "ti"
-%bcond_without	java_sun	# build with gcj
-%else
-%bcond_with	java_sun	# build with java-sun
-%endif
-
 %include	/usr/lib/rpm/macros.java
 
 %define		srcname		jfreechart
@@ -25,14 +19,12 @@ Source0:	http://downloads.sourceforge.net/jfreechart/%{srcname}-%{version}.tar.g
 # Source0-md5:	4967a55ef939ae60a18cd865e846f4cc
 URL:		http://www.jfree.org/jfreechart/
 BuildRequires:	ant
-%{!?with_java_sun:BuildRequires:	java-gcj-compat-devel}
 BuildRequires:	java-jcommon
 BuildRequires:	java-junit
 BuildRequires:	java-servletapi
-%{?with_java_sun:BuildRequires:	java-sun}
+BuildRequires:	jdk
 BuildRequires:	java-xml-commons
 BuildRequires:	jpackage-utils >= 0:1.5
-BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	java-jcommon
