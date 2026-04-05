@@ -5,13 +5,15 @@
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
 
+%{?use_default_jdk:%use_default_jdk 8}
+
 
 %define		srcname		jfreechart
 Summary:	Charts Generation library
 Summary(pl.UTF-8):	Biblioteka do generowania wykresów
 Name:		java-jfreechart
 Version:	1.0.7
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Java
 Source0:	http://downloads.sourceforge.net/jfreechart/%{srcname}-%{version}.tar.gz
@@ -21,11 +23,11 @@ BuildRequires:	ant
 BuildRequires:	java-jcommon
 BuildRequires:	java-junit
 BuildRequires:	java-servletapi
-BuildRequires:	jdk
+%buildrequires_jdk
 BuildRequires:	java-xml-commons
 BuildRequires:	jpackage-utils >= 0:1.5
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.556
 Requires:	java-jcommon
 Requires:	java-xml-commons
 BuildArch:	noarch
